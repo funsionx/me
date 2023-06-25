@@ -1,0 +1,12 @@
+---
+export type Props = {
+  img: any;
+  twStyles?: string;
+  href?: string;
+};
+const { img, twStyles, href } = Astro.props;
+---
+
+<a href={href}>
+  <img src={img} alt="pic" loading="lazy" class={twStyles} />
+</a>

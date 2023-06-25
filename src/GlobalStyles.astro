@@ -1,0 +1,35 @@
+<style is:global>
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  h1 {
+    @apply text-[40px] font-extrabold;
+  }
+
+  h2 {
+    @apply text-[30px] font-bold;
+  }
+
+  h3 {
+    @apply text-[24px];
+  }
+
+  h4 {
+    @apply text-[20px];
+  }
+
+  @layer base {
+    :root {
+      --color-bg: 48, 44, 66;
+      --color-button_first: 129, 118, 175;
+      --color-button_second: 192, 183, 232;
+    }
+  }
+</style>

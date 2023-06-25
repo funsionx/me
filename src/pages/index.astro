@@ -1,0 +1,44 @@
+---
+import Layout from "../layouts/Layout.astro";
+import avatar from "/avatar.mp4";
+import Video from "../components/stateless/Video.astro";
+import Animate from "../components/stateless/Animate.svelte";
+---
+
+<Layout title="funsion">
+  <main class="flex justify-center items-center flex-col mt-[5%]">
+    <section class="flex">
+      <Video src={avatar} looped twStyles="w-[350px] h-[450px]" />
+      <div class="flex flex-col items-end justify-center ml-[30px]">
+        <h1 class="tracking-wide text-cream">Maxim Agapov</h1>
+        <div class="text-purple">
+          <h3>.18_yo()</h3>
+          <h3>.student()</h3>
+          <h3>.web_developer()</h3>
+          <h3>.entp()</h3>
+        </div>
+      </div>
+    </section>
+
+    <footer class="mt-[5%] flex items-center">
+      <h1 class="rotate-90 animate-pulse">{"=>"}</h1>
+      <div class="absolute ml-[60px] flex items-center gap-[5px] text-cream">
+        <a href="">
+          <h4 class="underline underline-offset-1">or download pdf resume</h4>
+        </a>
+        <span>:(</span>
+      </div>
+    </footer>
+  </main>
+</Layout>
+
+<script>
+  export default {
+    methods: {
+      onLoad() {
+        const el = document.querySelector("el");
+        el?.classList.remove("opacity-0", "scale-90", "translate-y-4");
+      },
+    },
+  };
+</script>

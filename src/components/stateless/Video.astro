@@ -1,0 +1,15 @@
+---
+export type Props = {
+  src: string;
+  looped: boolean;
+  twStyles?: string;
+};
+const { src, looped, twStyles } = Astro.props;
+---
+
+<div class={"rounded-[20px] overflow-hidden " + twStyles}>
+  <video loop={looped} autoplay muted>
+    <source src={src} type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+</div>

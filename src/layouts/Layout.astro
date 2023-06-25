@@ -1,0 +1,38 @@
+---
+import Image from "../components/stateless/Image.astro";
+import ghIcon from "/icons/media/gh-icon.svg";
+import tgIcon from "/icons/media/tg-icon.svg";
+import "../globals.css";
+import ThemeSwitcher from "../components/statefull/ThemeSwitcher.svelte";
+
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Personal website" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="min-w-full">
+    <header class="px-[100px] flex justify-between mt-[30px]">
+      <a href="/">
+        <h2 class="text-white">funsion</h2>
+      </a>
+      <div class="flex gap-[40px] items-center">
+        <Image img={ghIcon} href="https://github.com/funsionx" />
+        <Image img={tgIcon} href="https://t.me/funsionM" />
+        <ThemeSwitcher client:only />
+      </div>
+    </header>
+    <slot />
+  </body>
+</html>
